@@ -12,7 +12,7 @@ const CardList = ({ Posts }) => (
                         <Card.Body>
                             <Card.Title>{title}</Card.Title>
                             <Card.Text>{excerpt}</Card.Text>
-                            <Button variant='primary'>{action}</Button>
+                            <Button variant='outline-primary'>{action}</Button>
                         </Card.Body>
                     </Card>
                 </Col>
