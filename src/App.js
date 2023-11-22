@@ -16,7 +16,7 @@ function App() {
       <Hero />
 
       <CreditCard />
-      <CardList posts={posts} />
+      <CardList Posts={posts} />
       <CenteredButton>Abra sua conta</CenteredButton>
     </div>
   );

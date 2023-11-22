@@ -1,4 +1,7 @@
+@import '../variables';
+
 .navbar {
-    background-color: #8c00b2 !important;
-    border-bottom: 0.2rem solid #f05656;
+    background-color: $color-primary;
+    border-bottom: 0.2rem solid $color-secundary;
 }
+

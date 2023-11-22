@@ -6,7 +6,7 @@ import './Hero.scss'
 
 const Hero = () => (
     <Card className="text-center text-light hero">
-        <Row className="my-lg-5">
+        <Row className="my-lg-5" style={{ width: '100%' }}>
             <Col lg className='text-lg-end  mt-5'>
                 <Image className="d-lg-none" src={logo} />
                 <Image className="d-none d-lg-inline-block" src={logoDesktop} />
