@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import Capa from './components/Capa'
+import Hero from './components/Hero'
 import "./App.scss";
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Capa />
+      <Hero />
     </div>
   );
 }
