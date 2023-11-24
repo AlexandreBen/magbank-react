@@ -9,6 +9,7 @@ import Faq from './components/Faq';
 import "./App.scss";
 
 import posts from './data/Posts'
+import Footer from './components/Footer';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <CenteredButton>Abra sua conta</CenteredButton>
       <Institucional />
       <Faq />
+      <Footer />
     </div>
   );
 }
