@@ -1,0 +1,54 @@
+@import '../variables';
+
+.faq {
+    background-color:  $color-faq-background;
+}
+
+div.faq__card {
+    background-color: unset;
+    color: #fff !important;
+}
+
+.accordion-button {
+    background-color: #3b2e4a !important;
+    color: #fff !important;
+}
+
+.accordion-button h2 {
+    background-color: #fff;
+}
+.accordion {
+    color: #fff !important;
+}
+
+.accordion-item {
+    border: 1px solid #323246 !important;
+}
+
+.accordion-button::after {
+    background-color: #51485c !important;
+    display: none !important;
+}
+
+.faq-icon-text {
+    cursor: pointer;
+}
+
+.text__duvidas {
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.faq-title {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    
+
+    @media screen and (max-width: 920px) {
+        font-size: 2.3rem;
+        text-align: center;
+        
+    }
+}
