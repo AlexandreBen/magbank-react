@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Navbar, Nav, Button, ButtonGroup, Form, Row, NavDropdown } from "react-bootstrap";
 import "./Navbar.scss";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Navigation = ({ handleCreateAcc }) => (

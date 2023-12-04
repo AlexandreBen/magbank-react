@@ -1,34 +1,34 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AccountModal from './components/AccountModal';
 import "./App.scss";
 
 import Home from './views/Home';
+import Login from './views/Login';
+import Dashboard from './views/Dashboard';
+
 
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <Router>
+    <>
       <Navbar  handleCreateAcc={() => setShowModal(true)}/>
        
-          <Switch>
-            <Route path='/' exact>
-                <Home handleClick={() => setShowModal(true)} />
-            </Route>
-            <Route path='/login'>
-                <h2>Hello React-router-Dom</h2>
-            </Route>
-          </Switch>
-        
+          <Routes>
+            <Route path="/"  element={<Home handleClick={() => setShowModal(true)} />} />
 
-      
+            <Route path="/login"  element={<Login />} /> 
+
+            <Route path="/Dashboerd"  element={<Dashboard />} /> 
+          </Routes>
       <Footer />
       <AccountModal show={showModal} handleClose={() => setShowModal(false)} />
-    </Router>
+      
+    </>
   );
 };
 
