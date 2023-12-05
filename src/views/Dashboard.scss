@@ -1,5 +1,6 @@
 @import '../variables';
 
+
 .user-avatar {
     position: absolute;
 }    
@@ -27,8 +28,12 @@
     font-weight: 500;
     transition: 0.3s;
 }
+
+.dashboard__button-active {
+    background-color: $color-primary;
+}
    
-.dashboard__button--active:hover {
+.dashboard__button-active:hover {
     background-color: $color-primary;
     color: #fff;
 }
@@ -48,5 +53,12 @@
     }
 }
 
+.nav-tabs .nav-link {
+    color: $color-primary;
+}
+
+.nav-tabs .nav-link.active {
+    color: $color-muted;
+}
 
 

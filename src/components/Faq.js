@@ -72,9 +72,9 @@ useEffect(() => {
                     </IconText>
                 ))}
            </Col>
-           <Col>
+           <Col xs={12} lg={7}>
                     <Accordion defaultActiveKey='0' activeKey={`${index}`}>
-                    <Accordion.Item eventKey="0"  className='faq__card'>
+                    <Accordion.Item  className='faq__card' eventKey="0">
                     <Accordion.Header>Lorem Ipson</Accordion.Header>
                     <Accordion.Body>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
