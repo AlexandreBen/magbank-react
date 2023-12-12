@@ -22,7 +22,7 @@ const Login = () => (
                     <Form.Label className="lead"><strong>Senha</strong></Form.Label>
                     <Form.Control type="password" />
                 </Form.Group>
-                <Link to='/dashboerd'>
+                <Link to='/dashboard'>
                     <Button variant="success" type="submit">
                        Criar Conta
                     </Button>

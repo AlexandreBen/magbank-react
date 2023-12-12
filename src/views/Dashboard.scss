@@ -1,6 +1,13 @@
 @import '../variables';
 
+.dashboard {
+    width: 100%;
+    
 
+    @media screen and (min-width: 992px) {
+        height: calc(100vh - 12.93rem);
+    }
+}
 .user-avatar {
     position: absolute;
 }    
@@ -49,7 +56,7 @@
 @media screen and (max-width:900px) {
     .conta__corrente {
         margin-top: -60px !important;
-        margin-left: 15px;
+        padding: 15px 0px 0px 25px;
     }
 }
 
