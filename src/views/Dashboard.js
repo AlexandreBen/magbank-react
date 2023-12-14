@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {  Row, Col, Container, Button } from 'react-bootstrap';
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import{ faCircle, faUser } from "@fortawesome/free-solid-svg-icons";
 
 import AccountBalance from "../components/AccountBalance";
+import AccountPayments from "../components/AccountPayments";
+import AccountHistory from '../components/AcconuntHistory';
 
 import './Dashboard.scss';
 
 
 const Dashboard  = ({ className = false }) => {
+
+    const [ activeLink, setActiveLink ] = useState(0);
+
+    
+    const links = [
+        { text: 'Minha Conta', path: '/dashboard', exact: true },
+        { text: 'Pagamentos', path: '/dashboard/payments' },
+        { text: 'Extrato', path: '/dashboard/history' },
+    ];
+
+    
     const data = {
         latestBalance: [
         {date: '14/08', description: 'SAQUE 24h 012925', value: '1.000,00' },
@@ -47,25 +60,28 @@ const Dashboard  = ({ className = false }) => {
                         </Col>
                     </Row>
                     <row xs={12} className='button py-5'>
-                    <Button className="dashboard__button dashboard__button-active" variant='link'>
-                            Minha Conta
-                        </Button>
-                        <Button className="dashboard__button " variant='link'>
-                            Pagamentos
-                        </Button>
-                        <Button className="dashboard__button " variant='link'>
-                            Extratos
-                        </Button>
+                        {links.map(({text, path, exact}, key) => (
+                            <Link className='dashboard__link' to={path} exact={exact ? exact : false} key={key}>
+                            <Button className={`dashboard__button text-left ${key === activeLink ? 'dashboard__button-active' : ''}`} 
+                            variant='link' 
+                            size='lg'
+                            block
+                            onClick={() => setActiveLink(key)}
+                            >
+                               {text}
+                            </Button>
+                            </Link>
+                        ))}
+                        
                     </row>     
                 </Col>
                 
                 <Routes>
-                    <Route path="/Dashboard" >
-                        <AccountBalance data={data} />
-                    </Route>    
+                    <Route path="" element={<AccountBalance data={data} />} />
+                    <Route path='payments' element={ <AccountPayments data={data} />} />  
+                    <Route path='history' element={ <AccountHistory data={data} />} />
                 </Routes>
-                  
-                 
+   
             </Row>
         </Container>
     );
