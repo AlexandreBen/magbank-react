@@ -8,6 +8,8 @@
         height: calc(100vh - 12.93rem);
     }
 }
+
+
 .user-avatar {
     position: absolute;
 }    
@@ -48,6 +50,7 @@
 
 .dashboard__button {
     text-decoration: none !important;
+    padding-right: 12vw;
 }
 
 .conta__corrente {
@@ -61,6 +64,7 @@
 .dashboard__link,
 .a {
     text-decoration: none;
+   
 }
 
 @media screen and (max-width:900px) {

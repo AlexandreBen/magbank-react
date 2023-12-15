@@ -5,12 +5,17 @@ import CardList from '../components/CardList';
 import CenteredButton from '../components/CenteredButton';
 import Institucional from '../components/Institutional';
 import Faq from '../components/Faq';
+import { motion } from 'framer-motion';
 
 import posts from '../data/Posts'
 
   const Home = ({ handleClickAcc }) => (
 
-        <>  
+        <motion.div 
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{scale: 0 }}
+        >  
           <Hero />
 
           <CreditCard />
@@ -21,7 +26,7 @@ import posts from '../data/Posts'
 
           <Institucional />
           <Faq /> 
-        </>
+        </motion.div>
 );
   
 

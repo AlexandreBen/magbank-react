@@ -2,12 +2,17 @@ import React from "react";
 import {  Row, Col, Form, Button, Image } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png'
+import { motion } from 'framer-motion'
 
 import './Login.scss';
 
 
 const Login = () => (
-    <section className="login">
+    <motion.section className="login"
+        initial={{ x: 1000 }}
+        animate={{ x: 0 }}
+        exit={{ x: window.innerWidth }}
+    >
         
         <Row>
             <Col className="text-center text-light form-input">
@@ -31,7 +36,7 @@ const Login = () => (
             </Form>
             </Col>
         </Row>
-    </section>
+    </motion.section>
 );
 
 export default Login;

@@ -4,6 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import{ faCircle, faUser } from "@fortawesome/free-solid-svg-icons";
 
+
 import AccountBalance from "../components/AccountBalance";
 import AccountPayments from "../components/AccountPayments";
 import AccountHistory from '../components/AcconuntHistory';
@@ -36,6 +37,16 @@ const Dashboard  = ({ className = false }) => {
         {date: '19/09', description: 'CARTÃO', value: '1.300,00' },
         {date: '21/09', description: 'GLOBOPLAY', value: '26,00' },
     ],
+
+    history: [
+        {date: '14/08', description: 'SAQUE 24h 012925', value: '1.000,00' },
+        {date: '19/08', description: 'FARMACIA 012345', value: '300,00' },
+        {date: '21/08', description: 'SUPERMERCADO 024854', value: '275,00' },
+        {date: '22/08', description: 'PETSHOP 012185', value: '30,00' },
+        {date: '01/09', description: 'SALÁRIO', value: '3.300,00' },
+        {date: '19/09', description: 'CARTÃO', value: '1.300,00' },
+        {date: '21/09', description: 'GLOBOPLAY', value: '26,00' },
+    ]
 };
 
     return (
@@ -83,6 +94,7 @@ const Dashboard  = ({ className = false }) => {
                 </Routes>
    
             </Row>
+            
         </Container>
     );
 };
