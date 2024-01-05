@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import {useNavigate } from 'react-router-dom';
 import { Modal, Button, Form } from 'react-bootstrap';
 
-const AccountModal = ({show, handleClose}) => (
+const AccountModal = ({ show, handleClose, auth }) => { 
+    
+    const navigate = useNavigate();
+    const [name, setName] = useState();
+
+    const handleSubmit = () => {
+        auth.login(name, '12345', navigate("/dashboard"));
+        handleClose();
+    }
+
+    return (
     <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
         <Modal.Title>Abra sua Conta</Modal.Title>
@@ -10,7 +21,7 @@ const AccountModal = ({show, handleClose}) => (
         <Form>
             <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Seu Nome</Form.Label>
-                <Form.Control type="text" placeholder="Digite seu nome:" />
+                <Form.Control type="text" placeholder="Digite seu nome:" value={name} onChange={(e) => setName(e.currentTarget.value )}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -61,11 +72,12 @@ const AccountModal = ({show, handleClose}) => (
         <Button variant="secondary" onClick={handleClose}>
             Cancelar
         </Button>
-        <Button variant="primary" onClick={handleClose}>
+        <Button variant="primary" onClick={handleSubmit}>
             Criar Conta
         </Button>
         </Modal.Footer>
     </Modal>
-);
+  );
+};
 
 export default AccountModal;

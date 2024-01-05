@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {  Row, Col, Container, Button } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import { Routes, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import{ faCircle, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -12,9 +12,10 @@ import AccountHistory from '../components/AcconuntHistory';
 import './Dashboard.scss';
 
 
-const Dashboard  = ({ className = false }) => {
+const Dashboard  = ({ className = false, name, account }) => {
 
     const [ activeLink, setActiveLink ] = useState(0);
+   
 
     
     const links = [
@@ -53,7 +54,7 @@ const Dashboard  = ({ className = false }) => {
         <Container className={`dashboard py-5 ${className ? className : ''}`}> 
             <Row>
                 <Col xs={12} lg={4}>
-                    <Row>
+                    <Row className='align-items-center mb-5'>
                         <Col xs={3}>
                             <span className="user-avatar">
                                 <FontAwesomeIcon icon={ faCircle } size="5x" color='#f8f9fa' />
@@ -66,13 +67,13 @@ const Dashboard  = ({ className = false }) => {
                             </span>
                         </Col>
                         <Col xs={9}>
-                            <h4>Alexandre Benjamin</h4>
-                            <p className="text-muted">ag:1234 c/c: 01905-0</p>
+                            <h4>{name}</h4>
+                            <p className="text-muted">{account}</p>
                         </Col>
                     </Row>
                     <row xs={12} className='button py-5'>
                         {links.map(({text, path, exact}, key) => (
-                            <Link className='dashboard__link' to={path} exact={exact ? exact : false} key={key}>
+                            <Link className='dashboard__link' to={path} exact={exact ? exact : false} key={key} >
                             <Button className={`dashboard__button text-left ${key === activeLink ? 'dashboard__button-active' : ''}`} 
                             variant='link' 
                             size='lg'

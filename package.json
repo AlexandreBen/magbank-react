@@ -14,6 +14,7 @@
     "gh": "^2.8.9",
     "modules": "^0.4.0",
     "node": "^21.1.0",
+    "package-lock.json": "^1.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
@@ -49,7 +50,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@types/react-router-dom": "^5.3.3"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
